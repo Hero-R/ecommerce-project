@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
   currentCategoryId: number = 1;
+  currentCategoryName: string = "";
 
   constructor(private productService: ProductService, 
               private route: ActivatedRoute) { }
@@ -29,10 +30,16 @@ export class ProductListComponent implements OnInit {
     if (hasCategoryId) {
       // get the "id" parameter string and convert it to a number using the "+" symbol
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
+
+      // get the "name" param string
+      this.currentCategoryName = this.route.snapshot.paramMap.get('name')!;
     }
     else {
       // not category id available... default category id to 1
       this.currentCategoryId = 1;
+
+      // default category name to Books
+      this.currentCategoryName = 'Books';
     }
 
     // now get the products for the given category id
