@@ -34,13 +34,22 @@
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-9" style="padding-left: 30%">
+                            <div class="col-md-8" style="padding-left: 30%">
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
                                                 [collectionSize]="theTotalElements"
                                                 (pageChange)="listProducts()">
 
                                 </ngb-pagination>
+                            </div>
+                            <div class="col-md-4 mt-2" style="text-align: right;">
+                                <span class="mr-2">Page Size </span>
+                                <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                                    <option selected="true">8</option>
+                                    <option>12</option>
+                                    <option>20</option>
+                                    <option>60</option>
+                                </select>
                             </div>
                         </div>
                     </div>
