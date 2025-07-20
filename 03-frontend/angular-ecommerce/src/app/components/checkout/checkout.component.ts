@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  checkoutFormGroup: FormGroup;
+  checkoutFormGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
 
